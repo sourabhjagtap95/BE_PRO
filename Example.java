@@ -1,3 +1,7 @@
+/*
+	This is a java file for Calculator app, whose methods are native i.e they are defined in another language
+	(here in C language)
+*/
 public class Example{
 	private native void print();
 	private native int read();
@@ -46,7 +50,6 @@ public class Example{
 		}while(ch!=0);
 	}
 	static {
-		System.loadLibrary("hello");
+		System.loadLibrary("hello");	//No need to give libhello.so in Linux
 	}
-
 }
