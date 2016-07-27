@@ -6,7 +6,8 @@ from library file.
 
 > It can be done by using Java Native Interface (JNI).
 To know more about it go to http://www.cprogramming.com/tutorial/shared-libraries-linux-gcc.html#fn:1 or 
-http://www.yolinux.com/TUTORIALS/LibraryArchives-StaticAndDynamic.html
+http://www.yolinux.com/TUTORIALS/LibraryArchives-StaticAndDynamic.html or 
+http://web.archive.org/web/20120419230023/http://java.sun.com/docs/books/jni/html/start.html
 
 # Steps to run the file :
 > For compiling java file:
