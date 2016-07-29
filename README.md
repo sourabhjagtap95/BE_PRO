@@ -12,18 +12,18 @@ http://web.archive.org/web/20120419230023/http://java.sun.com/docs/books/jni/htm
 # Steps to run the file :
 > For compiling java file:
 ```
-$ javac Example.java
+$ javac IPStructure.java
 ```
 ```
-$ javah -jni Example
+$ javah -jni IPStructure
 ```
 
 > For compiling C file
 ```
-$ gcc -fPIC -o libhello.so -shared -I /usr/lib/jvm/java-7-openjdk-amd64/include 
--I /usr/lib/jvm/java-7-openjdk-amd64/include/linux/ header1.c
+$ gcc -fPIC -o libip.so -shared -I /usr/lib/jvm/java-7-openjdk-amd64/include 
+-I /usr/lib/jvm/java-7-openjdk-amd64/include/linux/ IPStructure.c
 ```
-It creates a shared object library "libhello.so"
+It creates a shared object library "libip.so"
 
 >
 ```
@@ -31,5 +31,5 @@ $ export LD_LIBRARY_PATH = (current-directory):$LD_LIBRARY_PATH
 ```
 >
 ```
-$ java Example
+$ java IPStructure
 ```
