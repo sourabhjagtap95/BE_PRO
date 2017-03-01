@@ -1,0 +1,37 @@
+<md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left">
+    <md-toolbar class="md-theme-light">
+        <h1 class="md-toolbar-tools">About the Project</h1>
+    </md-toolbar>
+    <md-content layout-padding>
+    <div class="well">
+        <h1 class="md-headline">
+            This is the Final Year Project which takes all the information about the Field Programmable Gate Array (FPGA)
+            such as the data for IPv4 and IPv6, and display it in a formatted table which allows user to do CRUD operations on it.
+        </h1>
+    </div>
+        <md-button class="md-raised md-primary" ng-click="showMembers=true;showGuides=false">Members</md-button>
+        <md-button style="float:right" class="md-raised md-warn" ng-click="showGuides=true;showMembers=false;">Guides</md-button>
+        <md-list ng-show="showMembers">
+          <md-list-item class="md-2-line" ng-repeat="member in Members">
+            <div class="md-list-item-text well">
+                <ul>
+                    <li>
+                        <h2 class="md-title">{{member}}</h2>
+                    </li>
+                </ul>
+            </div>
+          </md-list-item>
+        </md-list>
+        <md-list ng-show="showGuides">
+          <md-list-item class="md-2-line" ng-repeat="guide in Guides">
+            <div class="md-list-item-text well">
+                <ul>
+                    <li>
+                        <h2 class="md-title">{{guide}}</h2>
+                    </li>
+                </ul>
+            </div>
+          </md-list-item>
+        </md-list>
+    </md-content>
+</md-sidenav>

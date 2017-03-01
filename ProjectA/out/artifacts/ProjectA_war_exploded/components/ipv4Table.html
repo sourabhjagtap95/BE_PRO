@@ -1,0 +1,104 @@
+<script type="text/javascript">
+    $("table").fadeIn(200000);
+</script>
+<table ng-if="IPv4" class="table table-striped table-bordered table-list table-data table-hover"  id="myTable">
+                        <thead align="center">
+                        <tr>
+                            <!-- <th>Sr. No.</th> -->
+                            <style type="text/css">
+                            th{
+                                cursor: pointer;
+                                text-align: center;
+                                background-color: #9E9E9E;
+                            }
+                            input{
+                                text-align: center;
+                            }
+                            </style>
+                            <th>
+                                <div flex-gt-sm="50">
+                                    <md-button class="md-fab md-mini" ng-model="selectedAll" ng-click="checkAll()"><span
+                                            class="fa fa-check-square"></span>
+                                    </md-button>
+                                </div>
+                            <th align="center">
+                                <a  ng-click="sortType = 'id'; sortReverse = !sortReverse">ID
+                                    <span class="glyphicon sort-icon" ng-show="sortType=='id'" ng-class="{'glyphicon-chevron-up':sortReverse,'glyphicon-chevron-down':!sortReverse}"></span>
+                                </a>
+                            </th> 
+                            </th>
+                            <th>
+                                <a  ng-click="sortType = 'sourceIP'; sortReverse = !sortReverse">Source IP Address
+                                    <span class="glyphicon sort-icon" ng-show="sortType=='sourceIP'" ng-class="{'glyphicon-chevron-up':sortReverse,'glyphicon-chevron-down':!sortReverse}"></span>
+                                </a>
+                            </th>
+                            <th>
+                                <a  ng-click="sortType = 'sourceSubnet'; sortReverse = !sortReverse">Source Subnet Mask
+                                    <span class="glyphicon sort-icon" ng-show="sortType=='sourceSubnet'" ng-class="{'glyphicon-chevron-up':sortReverse,'glyphicon-chevron-down':!sortReverse}"></span>
+                                </a>
+                            </th>
+                            <th>
+                                <a  ng-click="sortType = 'destIP'; sortReverse = !sortReverse">Destination IP Address
+                                    <span class="glyphicon sort-icon" ng-show="sortType=='destIP'" ng-class="{'glyphicon-chevron-up':sortReverse,'glyphicon-chevron-down':!sortReverse}"></span>
+                                </a>
+                            </th>
+                            <th>
+                                <a  ng-click="sortType = 'destSubnet'; sortReverse = !sortReverse">Destination Subnet Mask
+                                    <span class="glyphicon sort-icon" ng-show="sortType=='destSubnet'" ng-class="{'glyphicon-chevron-up':sortReverse,'glyphicon-chevron-down':!sortReverse}"></span>
+                                </a>
+                            </th>
+                            <th>
+                                <a  ng-click="sortType = 'sourcePort'; sortReverse = !sortReverse">Source Port Address
+                                    <span class="glyphicon sort-icon"ng-show="sortType=='sourcePort'" ng-class="{'glyphicon-chevron-up':sortReverse,'glyphicon-chevron-down':!sortReverse}"></span>
+                                </a>
+                            </th>
+                            <th>
+                                <a  ng-click="sortType = 'destPort'; sortReverse = !sortReverse">Destination Port Address
+                                    <span class="glyphicon sort-icon" ng-show="sortType=='destPort'" ng-class="{'glyphicon-chevron-up':sortReverse,'glyphicon-chevron-down':!sortReverse}"></span>
+                                </a>
+                            </th>
+                            <th>
+                                <a  ng-click="sortType = 'priority'; sortReverse = !sortReverse">Priority
+                                    <span class="glyphicon sort-icon" ng-show="sortType=='priority'"ng-class="{'glyphicon-chevron-up':sortReverse,'glyphicon-chevron-down':!sortReverse}"></span>
+                                </a>
+                            </th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr dir-paginate ="data in IP  | filter : query | orderBy:sortType:sortReverse | filter : category :strict | itemsPerPage:5"
+                            ng-class="{'selected':$index == selectedRow}">
+                            <!-- <td>{{ $index = $index + 1 }}</td> -->
+
+                            <td align="center">
+                                <div class="text-center" flex-gt-sm="50">
+                                    <md-checkbox ng-model="data.selected" aria-label="">
+                                    </md-checkbox>
+                                </div>
+                            </td>
+
+                            <!-- <td><md-input-container><input ng-model="data.id" ></md-input-container></td>
+                            <td><md-input-container><input ng-model="data.sourceIP" ></md-input-container></td>
+                            <td><md-input-container><input ng-model="data.sourceSubnet" ></md-input-container></td>
+                            <td><md-input-container><input ng-model="data.destIP" ></md-input-container></td>
+                            <td><md-input-container><input ng-model="data.destSubnet" ></md-input-container></td>
+                            <td><md-input-container><input ng-model="data.sourcePort" ></md-input-container></td>
+                            <td><md-input-container><input ng-model="data.destPort" ></md-input-container></td>
+                            <td><md-input-container><input ng-model="data.priority" ></md-input-container></td> -->
+                            <td><input class="form-control" ng-model="data.id" ></td>
+                            <td><input class="form-control" ng-model="data.sourceIP" ></td>
+                            <td><input class="form-control" ng-model="data.sourceSubnet" ></td>
+                            <td><input class="form-control" ng-model="data.destIP" ></td>
+                            <td><input class="form-control" ng-model="data.destSubnet" ></td>
+                            <td><input class="form-control" ng-model="data.sourcePort" ></td>
+                            <td><input class="form-control" ng-model="data.destPort" ></td>
+                            <td><input class="form-control" ng-model="data.priority" ></td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                <dir-pagination-controls
+                    max-size="5"
+                    direction-links="true"
+                    boundary-links="true" >
+                </dir-pagination-controls>

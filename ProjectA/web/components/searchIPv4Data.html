@@ -1,0 +1,54 @@
+<div style="margin-top:20px;" class="jumbotron sliderMenu1" ng-show="searchingMenu">
+                            <h3>Search By Categories</h3>
+                            <div layout="column" flex>
+                                <div layout="row" layout-margin ng-show="show">
+                                    <md-autocomplete
+                                        placeholder="Source IP"
+                                        md-items="item in IP"
+                                        md-selected-item="selectedSourceIP"
+                                        md-item-text="item.sourceIP">
+                                        <md-item-template>
+                                          <span md-highlight-flags="^i">{{item.sourceIP}}</span>
+                                        </md-item-template>
+                                    </md-autocomplete>
+                                    <!-- <input type="text" hidden ng-model="query = selectedSourceIP.sourceIP" > -->
+                                    <!-- {{selectedItem.sourceIP}} -->
+                                    <md-autocomplete
+                                        placeholder="Destination IP"
+                                        md-items="item in IP"
+                                        md-selected-item="selectedDestIP"
+                                        md-item-text="item.destIP">
+                                        <md-item-template>
+                                          <span  md-highlight-flags="^i">{{item.destIP}}</span>
+                                        </md-item-template>
+                                    </md-autocomplete>
+                                    <!-- <input type="text" hidden ng-model="query = selectedDestIP.destIP" > -->
+                                    <md-autocomplete
+                                        placeholder="Source Port"
+                                        md-items="item in IP"
+                                        md-selected-item="selectedSourcePort"
+                                        md-item-text="item.sourcePort">
+                                        <md-item-template>
+                                          <span  md-highlight-flags="^i">{{item.sourcePort}}</span>
+                                        </md-item-template>
+                                    </md-autocomplete>
+                                    <!-- <input type="text" hidden ng-model="query = selectedSourcePort.sourcePort" > -->
+                                    <md-autocomplete
+                                        placeholder="Destination Port"
+                                        md-items="item in IP"
+                                        md-selected-item="selectedDestPort"
+                                        md-item-text="item.destPort">
+                                        <md-item-template>
+                                          <span  md-highlight-flags="^i">{{item.destPort}}</span>
+                                        </md-item-template>
+                                    </md-autocomplete>
+                                    <!-- <input type="text" hidden ng-model="query = selectedDestPort.destPort" > -->
+                                </div>  
+                                <div layout="row" layout-margin>
+                                    <input type="text" ng-model="category.sourceIP " class="form-control" placeholder="Source IP">
+                                    <input type="text" ng-model="category.destIP " class="form-control" placeholder="Destination IP">
+                                    <input type="text" ng-model="category.sourcePort " class="form-control" placeholder="Source Port">
+                                    <input type="text" ng-model="category.destPort " class="form-control" placeholder="Destination Port">
+                                </div>
+                            </div>
+                        </div>

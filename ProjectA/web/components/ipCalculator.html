@@ -1,0 +1,81 @@
+<!-- <div class="well"> -->
+
+<div class="row">
+    <div class="col-sm-10">
+        <form name="SCForm" action="#" id="SCForm" role="form" class="form-horizontal">
+            <div class="form-group">
+                <label class="control-label col-sm-2">Class</label>
+                <div class="col-sm-10">
+                    <md-radio-group>
+                    <label class="radio-inline">
+                            <md-radio-button name="class" value="A" ng-checked="true"
+                                                       onclick="calculateClass('A');"/>A
+                            </md-radio-button>
+                    </label>
+                    <label class="radio-inline">
+                            <md-radio-button name="class" value="B"
+                                                       onclick="calculateClass('B');"/>B
+                            </md-radio-button>
+                    </label>
+                    <label class="radio-inline">
+                            <md-radio-button name="class" value="C"
+                                                       onclick="calculateClass('C');"/>C
+                            </md-radio-button>
+                    </label>
+                </md-radio-group>
+                </div>
+            </div>
+            <div class="form-group" layout-padding>
+                <label class="control-label col-sm-2" for="network">Network IP</label>
+                <div class="col-sm-10"><input id="network" value="{{IPv4_new_data.sourceIP}}" class="form-control" type="text" onchange="calculateIPCIDR(this.value);"/></div>
+            </div>
+            <div class="form-group" layout-padding>
+                <label class="control-label col-sm-2" for="mask">Subnet Mask</label>
+                <div class="col-sm-6"><input id="mask" class="form-control" type="text" onchange="calculateSubnet(this.value);"/></div>
+                <div class="col-sm-4"><select id="maskSelect" class="form-control"
+                                              onchange="calculateSubnet(this.options[this.selectedIndex].value);">
+                    <option value="255.0.0.0">loading...</option>
+                </select></div>
+            </div>
+            <div class="form-group" layout-padding>
+                <label class="control-label col-sm-2" for="wildcard">Wildcard Mask</label>
+                <div class="col-sm-10"><input id="wildcard" class="form-control" type="text" readonly="readonly"/></div>
+            </div>
+            <div class="form-group" layout-padding>
+                <label class="control-label col-sm-2" for="maskbits">Mask Bits</label>
+                <div class="col-sm-10"><input id="maskbits" class="form-control" type="text" readonly="readonly"/></div>
+            </div>
+            <div class="form-group" layout-padding>
+                <label class="control-label col-sm-2" for="hosts">Hosts</label>
+                <div class="col-sm-6"><input id="hosts" class="form-control" type="text" readonly="readonly"/></div>
+                <div class="col-sm-4"><select id="hostsSelect" class="form-control"
+                                              onchange="calculateHosts(this.options[this.selectedIndex].value);">
+                    <option value="2">loading...</option>
+                </select></div>
+            </div>
+            <div class="form-group" layout-padding>
+                <label class="control-label col-sm-2" for="subnetID">Subnet ID</label>
+                <div class="col-sm-10"><input id="subnetID" class="form-control" type="text" readonly="readonly"/></div>
+            </div>
+            <div class="form-group" layout-padding>
+                <label class="control-label col-sm-2" for="startIP">Start</label>
+                <div class="col-sm-10"><input id="startIP" class="form-control" type="text" readonly="readonly"/></div>
+            </div>
+            <div class="form-group" layout-padding>
+                <label class="control-label col-sm-2" for="endIP">End</label>
+                <div class="col-sm-10"><input id="endIP" class="form-control" type="text" readonly="readonly"/></div>
+            </div>
+            <div class="form-group" layout-padding>
+                <label class="control-label col-sm-2" for="broadcast">Broadcast</label>
+                <div class="col-sm-10"><input id="broadcast" class="form-control" type="text" readonly="readonly"/></div>
+            </div>
+            <div class="form-group" layout-padding>
+                <label class="control-label col-sm-2" for="bitmap">Bitmap</label>
+                <div class="col-sm-10"><input id="bitmap" class="form-control" type="text" size="35" disabled="disabled"/></div>
+            </div>
+        </form>
+        <!-- div id="dynTable">
+            loading...
+        </div -->
+    </div>
+</div>
